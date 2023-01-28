@@ -29,16 +29,22 @@ function displayBook(){
     const bookAuthor = document.createElement("h3")
     const bookPages = document.createElement("h3")
     const bookIsRead = document.createElement("h3")
+
+    const removeButton = document.createElement("button")
+    removeButton.classList.add("button")
+
     myLibrary.forEach(book => {
         bookTitle.textContent = book.title
         bookAuthor.textContent = book.author
         bookPages.textContent = book.pages
         bookIsRead.textContent = book.isRead
+        removeButton.textContent = "Remove from library"
 
         div.appendChild(bookTitle)
         div.appendChild(bookAuthor)
         div.appendChild(bookPages)
         div.appendChild(bookIsRead)
+        div.appendChild(removeButton)
         container.appendChild(div)
     });
 }
