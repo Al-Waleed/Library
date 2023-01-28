@@ -27,9 +27,37 @@
             <h4>test</h4>
             <h4>test</h4>
             <h4>test</h4>
-            <h3><button class="remove-book button">Remove from library</button></h3>
+            <button class="remove-book button">Remove from library</button>
         </div>  
     
     </div>
+
+    <div class="pop-up">
+        <form class="book-info">
+            <label for="title">Book Title:</label>
+            <input type="text" class="input-field">
+
+            <label for="author">Book Author:</label>
+            <input type="text" class="input-field">
+
+            <label for="pages">Number Of Pages:</label>
+            <input type="tel" class="input-field">
+
+            <label>Did You Read It:</label>
+            <div>
+                <label for="read-yes">Yes</label>
+                <input type="radio" id="read-yes" name="yes-no">
+                <label for="read-no">No</label>
+                <input type="radio" id="read-no" name="yes-no">
+            </div>
+
+            <button class="form-button">Add Book</button>
+            <button class="form-button">Cancel</button>
+        </form>
+    </div>
+
+
+
+
 </body>
 </html>
