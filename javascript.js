@@ -27,10 +27,10 @@ const displayBook= (e) => {
     addBookToLibrary();
     const div = document.createElement("div")
     div.classList.add("book")
-    const bookTitle = document.createElement("h3")
-    const bookAuthor = document.createElement("h3")
-    const bookPages = document.createElement("h3")
-    const bookIsRead = document.createElement("h3")
+    const bookTitle = document.createElement("p")
+    const bookAuthor = document.createElement("p")
+    const bookPages = document.createElement("p")
+    const bookIsRead = document.createElement("p")
 
     const removeButton = document.createElement("button")
     removeButton.classList.add("button", "remove-book")
