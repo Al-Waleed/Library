@@ -18,22 +18,30 @@ function addBookToLibrary(){
     myLibrary.push(newBook);
 }
 
-addBookToLibrary();
-let display = [];
+
+const container = document.querySelector(".container")
 
 function displayBook(){
+    addBookToLibrary();
+    const div = document.createElement("div")
+    div.classList.add("book")
+    const bookTitle = document.createElement("h3")
+    const bookAuthor = document.createElement("h3")
+    const bookPages = document.createElement("h3")
+    const bookIsRead = document.createElement("h3")
     myLibrary.forEach(book => {
-        display = []
-        let bookTitle = book.title
-        let bookAuthor = book.author
-        let bookPages = book.pages
-        let bookIsRead = book.isRead
-        display.push(bookTitle)
-        display.push(bookAuthor)
-        display.push(bookPages)
-        display.push(bookIsRead)
+        bookTitle.textContent = book.title
+        bookAuthor.textContent = book.author
+        bookPages.textContent = book.pages
+        bookIsRead.textContent = book.isRead
+
+        div.appendChild(bookTitle)
+        div.appendChild(bookAuthor)
+        div.appendChild(bookPages)
+        div.appendChild(bookIsRead)
+        container.appendChild(div)
     });
 }
- displayBook();
 
-//  console.table(display)
+const addBook = document.querySelector(".add-book")
+addBook.addEventListener("click", displayBook)
