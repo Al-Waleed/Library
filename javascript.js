@@ -72,3 +72,9 @@ function openForm(){
 
 const addBook = document.getElementById("addToGrid")
 addBook.addEventListener("click", displayBook);
+
+const hideForm = document.getElementById("hideButton")
+hideForm.addEventListener("click", (e) => {
+    e.preventDefault();
+    document.getElementById("pop-up").style.display = "none"
+})
