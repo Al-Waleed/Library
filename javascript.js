@@ -53,10 +53,15 @@ function displayBook(){
     });
 }
 
-const addBook = document.querySelector(".add-book")
-addBook.addEventListener("click", displayBook)
+// const addBook = document.querySelector(".add-book")
+// addBook.addEventListener("click", displayBook)
 
 //let removeBook = document.querySelectorAll(".remove-book")
 //removeBook.forEach((btn) => {
 //    btn.addEventListener("click", () => btn.parentElement.remove())
 //})
+
+function openForm(){
+    document.getElementById("pop-up").style.display = "block"
+
+}
