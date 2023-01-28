@@ -14,7 +14,7 @@ function addBookToLibrary(){
     Book.author = document.getElementById("author").value;
     Book.pages = document.getElementById("pages").value;
 
-    document.getElementById("read-yes").checked ? Book.isRead = "Yes" : Book.isRead = "No"//to check which radio button is selected
+    document.getElementById("read-yes").checked ? Book.isRead = "Read" : Book.isRead = "Not Read"//to check which radio button is selected
 
     myLibrary.push(newBook);
 }
@@ -30,7 +30,8 @@ const displayBook= (e) => {
     const bookTitle = document.createElement("p")
     const bookAuthor = document.createElement("p")
     const bookPages = document.createElement("p")
-    const bookIsRead = document.createElement("p")
+    const bookIsRead = document.createElement("button")
+    bookIsRead.classList.add("button", "status")
 
     const removeButton = document.createElement("button")
     removeButton.classList.add("button", "remove-book")
@@ -54,6 +55,11 @@ const displayBook= (e) => {
         btn.addEventListener("click", () => btn.parentElement.remove())
 })
     });
+
+    const toggleButton = document.querySelectorAll(".status")
+    toggleButton.forEach((toggled) => {
+        toggled.addEventListener("click", toggleRead)
+    })
 }
 
 // const addBook = document.querySelector(".add-book")
@@ -78,3 +84,9 @@ hideForm.addEventListener("click", (e) => {
     e.preventDefault();
     document.getElementById("pop-up").style.display = "none"
 })
+
+
+function toggleRead() {
+    console.log("asd")
+    this.textContent=="Read" ? this.textContent = "Not Read" : this.textContent = "Read"
+}
