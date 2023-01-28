@@ -15,12 +15,28 @@ body {
     padding: 12px;
     display: grid;
     gap: 4px;
+    color: #cbd5e1;
 }
 
-.container div {
+.header,
+.about,
+.book {
     border: 2px solid #0f172a;
     border-radius: 12px;
     padding: 8px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.header h2 {
+    grid-column-start: -2;
+}
+
+.button {
+    border-radius: 12px;
+    border: none;
+    padding: 4px;
+    width: 150px;
+    background-color: #1e293b;
+    color: #cbd5e1;
 }
