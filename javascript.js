@@ -31,7 +31,7 @@ function displayBook(){
     const bookIsRead = document.createElement("h3")
 
     const removeButton = document.createElement("button")
-    removeButton.classList.add("button")
+    removeButton.classList.add("button", "remove-book")
 
     myLibrary.forEach(book => {
         bookTitle.textContent = book.title
@@ -46,8 +46,17 @@ function displayBook(){
         div.appendChild(bookIsRead)
         div.appendChild(removeButton)
         container.appendChild(div)
+        let removeBook = document.querySelectorAll(".remove-book")
+        removeBook.forEach((btn) => {
+        btn.addEventListener("click", () => btn.parentElement.remove())
+})
     });
 }
 
 const addBook = document.querySelector(".add-book")
 addBook.addEventListener("click", displayBook)
+
+//let removeBook = document.querySelectorAll(".remove-book")
+//removeBook.forEach((btn) => {
+//    btn.addEventListener("click", () => btn.parentElement.remove())
+//})
