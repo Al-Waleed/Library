@@ -35,23 +35,23 @@
     <div id="pop-up">
         <form class="book-info">
             <label for="title">Book Title:</label>
-            <input type="text" class="input-field">
+            <input id="title" type="text" class="input-field">
 
             <label for="author">Book Author:</label>
-            <input type="text" class="input-field">
+            <input id="author" type="text" class="input-field">
 
             <label for="pages">Number Of Pages:</label>
-            <input type="tel" class="input-field">
+            <input id="pages" type="tel" class="input-field">
 
             <label>Did You Read It:</label>
             <div>
                 <label for="read-yes">Yes</label>
-                <input type="radio" id="read-yes" name="yes-no">
+                <input type="radio" id="read-yes" name="yes-no" value="Yes">
                 <label for="read-no">No</label>
-                <input type="radio" id="read-no" name="yes-no">
+                <input type="radio" id="read-no" name="yes-no" value="No">
             </div>
 
-            <button class="form-button">Add Book</button>
+            <button id="addToGrid" class="form-button">Add Book</button>
             <button class="form-button">Cancel</button>
         </form>
     </div>

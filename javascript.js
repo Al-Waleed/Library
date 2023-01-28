@@ -9,19 +9,21 @@ function Book() {
 
 function addBookToLibrary(){
     const newBook = Object.create(Book)
-    Book.title = prompt("Enter the book's title");
-    Book.author = prompt("Enter author's name");
-    Book.pages = prompt("Enter the number of pages");
-    Book.isRead = prompt("Did you read the book");
 
-    
+    Book.title = document.getElementById("title").value;
+    Book.author = document.getElementById("author").value;
+    Book.pages = document.getElementById("pages").value;
+
+    document.getElementById("read-yes").checked ? Book.isRead = "Yes" : Book.isRead = "No"//to check which radio button is selected
+
     myLibrary.push(newBook);
 }
 
 
 const container = document.querySelector(".container")
 
-function displayBook(){
+const displayBook= (e) => {
+    e.preventDefault();
     addBookToLibrary();
     const div = document.createElement("div")
     div.classList.add("book")
@@ -46,6 +48,7 @@ function displayBook(){
         div.appendChild(bookIsRead)
         div.appendChild(removeButton)
         container.appendChild(div)
+        document.forms[0].reset()
         let removeBook = document.querySelectorAll(".remove-book")
         removeBook.forEach((btn) => {
         btn.addEventListener("click", () => btn.parentElement.remove())
@@ -65,3 +68,7 @@ function openForm(){
     document.getElementById("pop-up").style.display = "block"
 
 }
+
+
+const addBook = document.getElementById("addToGrid")
+addBook.addEventListener("click", displayBook);
